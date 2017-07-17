@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" />
 </head>
 <body>
-	<form action="index.html" method="post">
+	<form action="login.html" method="post">
 		Użytkownik: </br>
 		<input id="fields" type="text" name="username"/><br/>  
 		Hasło: </br>

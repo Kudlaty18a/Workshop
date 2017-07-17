@@ -43,13 +43,13 @@ public class WorkshopOwnerDao implements Dao{
 	} // end of method
 	
 	public int getIDByUsername(WorkshopOwner workshopOwner){
-		String query = "SELECT id FROM WorkshopOwner WHERE username='" + workshopOwner.getUsername() + "'";
+		String query = "SELECT workshopOwnerID FROM WorkshopOwner WHERE username='" + workshopOwner.getUsername() + "'";
 		workshopOwner.setWorkshopOwnerID(template.queryForObject(query, Integer.class));
 		return workshopOwner.getWorkshopOwnerID();
 	} // end of method
 	
 	public String getPasswordById(int id){
-		String query = "SELECT password FROM WorkshopOwner WHERE id =" + id + "";
+		String query = "SELECT password FROM WorkshopOwner WHERE workshopOwnerID=" + id + "";
 		return template.queryForObject(query, String.class);
 	} // end of method
 	
