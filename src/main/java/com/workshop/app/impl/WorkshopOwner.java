@@ -1,8 +1,6 @@
 package com.workshop.app.impl;
 
-import com.workshop.app.api.DataFromJdbc;
-
-public class WorkshopOwner implements DataFromJdbc {
+public class WorkshopOwner {
 	
 	private int workshopOwnerID;
 	private String username;

@@ -31,4 +31,12 @@
 	<bean id="workshopOwner" class="com.workshop.app.impl.WorkshopOwner">
 	</bean>
 	
+	<bean id="customerDao" class="com.workshop.app.dao.CustomerDao">
+		<property name="template" ref="jt" />
+	</bean>
+	
+	<bean id="carDao" class="com.workshop.app.dao.CarDao">
+		<property name="template" ref="jt" />
+	</bean>
+	
 </beans>
