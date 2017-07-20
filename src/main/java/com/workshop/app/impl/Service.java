@@ -2,18 +2,18 @@ package com.workshop.app.impl;
 
 public class Service {
 
-	private int seriveID;
+	private int serviceID;
 	private String registrationNumber;
 	private double price;
 	private int carID;
 	private int customerID;
 
-	public int getSeriveID() {
-		return seriveID;
+	public int getServiceID() {
+		return serviceID;
 	}
 
-	public void setSeriveID(int seriveID) {
-		this.seriveID = seriveID;
+	public void setServiceID(int serviceID) {
+		this.serviceID = serviceID;
 	}
 
 	public String getRegistrationNumber() {

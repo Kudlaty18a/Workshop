@@ -14,13 +14,14 @@ div{
 table {
 	margin-top: 50px;
     border-collapse: collapse;
-    width: 200%;
+    width: 120.5%;
     margin-left: 140px;
 }
 
 th, td {
     text-align: left;
     padding: 8px;
+    text-align: center;
 }
 
 tr:nth-child(even){
@@ -42,5 +43,10 @@ th {
 }
 
 .button:hover{
-	color: #2400FF;
+	color: #00FF66;
+}
+
+tr:hover{
+	background-color: #888888;
+    color: white;
 }

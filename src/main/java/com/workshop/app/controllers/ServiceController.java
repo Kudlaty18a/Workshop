@@ -16,6 +16,7 @@ import com.workshop.app.dao.ServiceDao;
 import com.workshop.app.impl.Car;
 import com.workshop.app.impl.Customer;
 import com.workshop.app.impl.Service;
+import com.workshop.app.impl.ServiceAllInfo;
 
 @Controller
 public class ServiceController {
@@ -26,6 +27,7 @@ public class ServiceController {
 	private CarDao carDao;
 	@Autowired
 	private CustomerDao customerDao;
+	@Autowired
 	
 	@RequestMapping("/addService")
 	public ModelAndView showForm(Map<String, Object> map){
@@ -41,6 +43,12 @@ public class ServiceController {
 	public ModelAndView save(@ModelAttribute("service") Service service){
 		serviceDao.save(service);
 		return new ModelAndView("redirect:/addService");
+	}
+	
+	@RequestMapping("/showServices")
+	public ModelAndView showServices(){
+		List<ServiceAllInfo> list = serviceDao.getAllServices();
+		return new ModelAndView("showServices", "list", list);
 	}
 	
 }
