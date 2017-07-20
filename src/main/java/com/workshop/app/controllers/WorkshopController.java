@@ -19,7 +19,6 @@ public class WorkshopController {
 	private WorkshopOwnerDao workshopOwnerDao;
 	@Autowired
 	private WorkshopOwner workshopOwner;
-	HttpSession session;
 
 	@RequestMapping("/login")
 	public ModelAndView welcomePage(HttpServletRequest request, HttpServletResponse response){
@@ -27,7 +26,6 @@ public class WorkshopController {
 		String password = request.getParameter("password");
 		
 		if(password.equals(workshopOwnerDao.loginCondition(workshopOwner))){
-			session = request.getSession(true);
 			return new ModelAndView("loginpage");
 		}
 		else{
@@ -35,11 +33,5 @@ public class WorkshopController {
 		}
 		
 	} // end of method
-	
-	@RequestMapping("/logout")
-	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
-		session = request.getSession(false);
-		return new ModelAndView("index");
-	}
 	
 }

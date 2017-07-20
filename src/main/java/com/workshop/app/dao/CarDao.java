@@ -26,7 +26,7 @@ public class CarDao {
 	
 	public int update(Car car){
 		String query = "UPDATE car SET brand='" + car.getBrand() + "', model='" 
-				+ car.getModel() + "', year='" + car.getModel() + "' WHERE carID=" + car.getCarID();
+				+ car.getModel() + "', year='" + car.getYear() + "' WHERE carID=" + car.getCarID();
 		return template.update(query);
 	}
 	

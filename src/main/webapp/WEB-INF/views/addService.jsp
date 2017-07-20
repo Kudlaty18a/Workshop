@@ -14,13 +14,23 @@
 	<jsp:include page="/WEB-INF/views/loginpage.jsp"></jsp:include>
 	<div>
 		<h1>Dodaj samochód</h1>
-		<form:form method="post" action="saveCar">
-			<p>Marka :</p>
-			<form:input path="brand" /></br>
-			<p>Model :</p>
-			<form:input path="model" /></br>
-			<p>Rok produkcji :</p>
-			<form:input path="year" /></br>
+		<form:form method="post" action="saveService">
+			<p>Numer rejestracyjny pojazdu :</p>
+			<form:input path="registrationNumber" /></br>
+			<p>Koszt usługi :</p>
+			<form:input path="price" /></br>
+			<p>Wybierz pojazd :</p>
+			<form:select path="carID" name="car">
+				<c:forEach var="showCar" items="${listOfCars }">
+					<option value="${showCar.carID }">${showCar.brand } ${showCar.model }</option>
+				</c:forEach>
+			</form:select></br>
+			<p>Wybierz klienta</p>
+			<form:select path="customerID" name="customer">
+				<c:forEach var="showCustomer" items="${listOfCustomers }">
+					<option value="${showCustomer.customerID }">${showCustomer.firstName } ${showCustomer.secondName }</option>
+				</c:forEach>
+			</form:select></br>
 			<input type="submit" value="Zapisz" />
 		</form:form>
 	</div>

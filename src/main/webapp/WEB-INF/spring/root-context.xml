@@ -39,4 +39,8 @@
 		<property name="template" ref="jt" />
 	</bean>
 	
+	<bean id="serviceDao" class="com.workshop.app.dao.ServiceDao">
+		<property name="template" ref="jt" />
+	</bean>
+	
 </beans>

@@ -13,15 +13,16 @@
 <body>
 	<jsp:include page="/WEB-INF/views/loginpage.jsp"></jsp:include>
 	<div>
-		<h1>Dodaj samochód</h1>
-		<form:form method="post" action="saveCar">
+		<h1>Edytuj samochód</h1>
+		<form:form method="POST" action="/app/editSaveCar">
+			<form:hidden  path="carID" />
 			<p>Marka :</p>
 			<form:input path="brand" /></br>
 			<p>Model :</p>
 			<form:input path="model" /></br>
 			<p>Rok produkcji :</p>
 			<form:input path="year" /></br>
-			<input type="submit" value="Zapisz" />
+			<input type="submit" value="Zatwierdź edycję" />
 		</form:form>
 	</div>
 </body>

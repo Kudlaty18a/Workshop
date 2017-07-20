@@ -19,7 +19,7 @@
 			<form:input path="firstName" /></br>
 			<p>Nazwisko :</p>
 			<form:input path="secondName" /></br>
-			<p>Numer telefonu:</p>
+			<p>Numer telefonu :</p>
 			<form:input path="phoneNumber" /></br>
 			<input type="submit" value="Zapisz" />
 		</form:form>

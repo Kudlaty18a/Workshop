@@ -10,13 +10,13 @@
 </head>
 <body>
 	<ul>
-		<li><a class="active" href="redirect:/loginpage.html">Strona główna</a></li>
+		<li><a class="active" href="mainPage.html">Strona główna</a></li>
 		<li><a href="addCustomer.html">Dodaj klienta</a></li>
 		<li><a href="addCar.html">Dodaj samochód</a></li>
-		<li><a href="addservice.html">Dodaj usługę</a></li>
+		<li><a href="addService.html">Dodaj usługę</a></li>
 		<li><a href="showCustomers.html">Wyświetl klientów</a></li>
 		<li><a href="showCars.html">Wyświetl samochody</a></li>
-		<li><a href="showservices.html">Wyświetl usługi</a></li>
+		<li><a href="showServices.html">Wyświetl usługi</a></li>
 		<li class="logout_button"><a href="logout.html">Wyloguj</a></li>
 	</ul>
 </body>
