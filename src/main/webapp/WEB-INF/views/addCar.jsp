@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Warsztat</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/loginpage.css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/addCustomer.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/addCustomers.css" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/loginpage.jsp"></jsp:include>

@@ -13,8 +13,9 @@
 <body>
 	<jsp:include page="/WEB-INF/views/loginpage.jsp"></jsp:include>
 	<div>
-		<h1>Dodaj samochód</h1>
-		<form:form method="post" action="saveService">
+		<h1>Edytuj usługę</h1>
+		<form:form method="POST" action="/app/editSaveService">
+			<form:hidden  path="serviceID" />
 			<p>Numer rejestracyjny pojazdu :</p>
 			<form:input path="registrationNumber" /></br>
 			<p>Koszt usługi :</p>

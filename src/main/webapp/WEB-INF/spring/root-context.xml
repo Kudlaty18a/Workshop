@@ -24,23 +24,11 @@
 		<property name="dataSource" ref="ds" />
 	</bean>
 
-	<bean id="workshopOwnerDao" class="com.workshop.app.dao.WorkshopOwnerDao">
+	<bean id="workshopDao" class="com.workshop.app.dao.WorkshopDao">
 		<property name="template" ref="jt"/>
 	</bean>
 	
 	<bean id="workshopOwner" class="com.workshop.app.impl.WorkshopOwner">
-	</bean>
-	
-	<bean id="customerDao" class="com.workshop.app.dao.CustomerDao">
-		<property name="template" ref="jt" />
-	</bean>
-	
-	<bean id="carDao" class="com.workshop.app.dao.CarDao">
-		<property name="template" ref="jt" />
-	</bean>
-	
-	<bean id="serviceDao" class="com.workshop.app.dao.ServiceDao">
-		<property name="template" ref="jt" />
 	</bean>
 	
 </beans>
