@@ -23,13 +23,27 @@
 			<p>Wybierz pojazd :</p>
 			<form:select path="carID" name="car">
 				<c:forEach var="showCar" items="${listOfCars }">
-					<option value="${showCar.carID }">${showCar.brand } ${showCar.model }</option>
+					<c:choose>	
+						<c:when test="${showCar.carID eq carID }">
+							<option value="${showCar.carID }" selected>${showCar.brand } ${showCar.model } ${showCar.year }</option>
+						</c:when>
+						<c:otherwise>
+							<option value="${showCar.carID }">${showCar.brand } ${showCar.model } ${showCar.year }</option>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 			</form:select></br>
 			<p>Wybierz klienta</p>
 			<form:select path="customerID" name="customer">
 				<c:forEach var="showCustomer" items="${listOfCustomers }">
-					<option value="${showCustomer.customerID }">${showCustomer.firstName } ${showCustomer.secondName }</option>
+					<c:choose>
+						<c:when test="${showCustomer.customerID eq cusID}">
+							<option value="${showCustomer.customerID }" selected>${showCustomer.firstName } ${showCustomer.secondName }</option>
+						</c:when>
+						<c:otherwise>
+							<option value="${showCustomer.customerID }">${showCustomer.firstName } ${showCustomer.secondName }</option>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
 			</form:select></br>
 			<input type="submit" value="Zapisz" />

@@ -30,7 +30,8 @@
 					<td>${car.model }</td>
 					<td>${car.year }</td>
 					<td><a class="button" href="editCar/${car.carID }">Edytuj</a></td>
-					<td><a class="button" href="deleteCar/${car.carID }">Usuń</a></td>
+					<td><a class="button" href="deleteCar/${car.carID }" 
+						onclick="return confirm('Usuwając ten samochód spowodujesz usunięcie wszystkich usług, które są z nim powiązane. Czy na pewno chcesz kontynuować?')">Usuń</a></td>
 				</tr>
 			</c:forEach>
 		</table>

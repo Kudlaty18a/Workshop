@@ -60,6 +60,12 @@ public class ServiceController {
 		map.put("listOfCustomers", listOfCustomers);
 		
 		Service service = dao.getServiceByID(serviceID);
+		
+		// giving customerID and carID to the editService jsp page to make choose statement
+		
+		map.put("cusID", service.getCustomerID());
+		map.put("carID", service.getCarID());
+		
 		return new ModelAndView("editService", "command", service);
 	}
 	

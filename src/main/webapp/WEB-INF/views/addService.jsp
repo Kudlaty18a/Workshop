@@ -22,7 +22,7 @@
 			<p>Wybierz pojazd :</p>
 			<form:select path="carID" name="car">
 				<c:forEach var="showCar" items="${listOfCars }">
-					<option value="${showCar.carID }">${showCar.brand } ${showCar.model }</option>
+					<option value="${showCar.carID }">${showCar.brand } ${showCar.model } ${showCar.year }</option>
 				</c:forEach>
 			</form:select></br>
 			<p>Wybierz klienta</p>

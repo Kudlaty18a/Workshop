@@ -35,7 +35,8 @@
 					<td>${s.phoneNumber }</td>
 					<td>${s.price }</td>
 					<td><a class="button" href="editService/${s.serviceID }">Edytuj</a></td>
-					<td><a class="button" href="deleteService/${s.serviceID }">Usuń</a></td>
+					<td><a class="button" href="deleteService/${s.serviceID }" 
+						onclick="return confirm('Usuwając tą usługę spowodujesz usunięcie wszystkich akcji, które są z nią powiązane. Czy na pewno chcesz kontynuować?')">Usuń</a></td>
 					<td><a class="button" href="addAction/${s.serviceID }">Dodaj działanie</a></td>
 				</tr>
 			</c:forEach>

@@ -59,6 +59,9 @@ public class WorkshopDao {
 	} // end of method
 
 	public int deleteCar(int id) {
+		
+		deleteServiceByCarID(id);
+		
 		String query = "DELETE FROM car WHERE carID=" + id + "";
 		return template.update(query);
 	} // end of method
@@ -101,6 +104,9 @@ public class WorkshopDao {
 	} // end of method
 
 	public int deleteCustomer(int id) {
+		
+		deleteServiceByCustomerID(id);
+		
 		String query = "DELETE FROM customer WHERE customerID=" + id + "";
 		return template.update(query);
 
@@ -128,7 +134,7 @@ public class WorkshopDao {
 
 	} // end of method
 
-	/*
+	/* 
 	 * Dao for service table
 	 */
 
@@ -143,6 +149,16 @@ public class WorkshopDao {
 		String query = "DELETE FROM service WHERE serviceID=" + id + "";
 		return template.update(query);
 
+	} // end of method
+	
+	public int deleteServiceByCarID(int carID){
+		String query = "DELETE FROM service WHERE carID=" + carID;
+		return template.update(query);
+	} // end of method
+	
+	public int deleteServiceByCustomerID(int customerID){
+		String query = "DELETE FROM service WHERE customerID=" + customerID;
+		return template.update(query);
 	} // end of method
 	
 	public Service getServiceByID(int id) {

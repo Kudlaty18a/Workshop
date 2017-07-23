@@ -30,7 +30,8 @@
 					<td>${customer.secondName }</td>
 					<td>${customer.phoneNumber }</td>
 					<td><a class="button" href="editCustomer/${customer.customerID }">Edytuj</a></td>
-					<td><a class="button" href="deleteCustomer/${customer.customerID }">Usuń</a></td>
+					<td><a class="button" href="deleteCustomer/${customer.customerID }" 
+						onclick="return confirm('Usuwając tego klienta spowodujesz usunięcie wszystkich usług, które są z nim powiązane. Czy na pewno chcesz kontynuować?')">Usuń</a></td>
 				</tr>
 			</c:forEach>
 		</table>
