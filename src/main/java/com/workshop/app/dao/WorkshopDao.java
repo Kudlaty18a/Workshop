@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.workshop.app.impl.ActionHistory;
 import com.workshop.app.impl.Car;
 import com.workshop.app.impl.Customer;
 import com.workshop.app.impl.Service;
@@ -195,6 +196,16 @@ public class WorkshopDao {
 				return s;
 			}
 		});
+	} // end of method
+	
+	/*
+	 * ActionHistory Dao
+	 */
+	
+	public int saveAction(ActionHistory history){
+		String query = "INSERT INTO actionhistory(actionDate, operation, price, serviceID) VALUES(CURRENT_DATE(), '" 
+				+ history.getOperation() + "', " + history.getPrice() + ", " + history.getServiceID() + ")";
+		return template.update(query);
 	} // end of method
 
 }
