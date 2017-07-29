@@ -13,7 +13,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/loginpage.jsp"></jsp:include>
 	<div>
-		<h1>Dodaj samochód</h1>
+		<h1>Dodaj usługę</h1>
 		<form:form method="post" action="saveService">
 			<p>Numer rejestracyjny pojazdu :</p>
 			<form:input path="registrationNumber" /></br>

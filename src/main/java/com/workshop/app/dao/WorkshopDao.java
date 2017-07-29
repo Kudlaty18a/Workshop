@@ -60,9 +60,9 @@ public class WorkshopDao {
 	} // end of method
 
 	public int deleteCar(int id) {
-		
+
 		deleteServiceByCarID(id);
-		
+
 		String query = "DELETE FROM car WHERE carID=" + id + "";
 		return template.update(query);
 	} // end of method
@@ -105,9 +105,9 @@ public class WorkshopDao {
 	} // end of method
 
 	public int deleteCustomer(int id) {
-		
+
 		deleteServiceByCustomerID(id);
-		
+
 		String query = "DELETE FROM customer WHERE customerID=" + id + "";
 		return template.update(query);
 
@@ -135,7 +135,7 @@ public class WorkshopDao {
 
 	} // end of method
 
-	/* 
+	/*
 	 * Dao for service table
 	 */
 
@@ -145,34 +145,34 @@ public class WorkshopDao {
 				+ service.getCustomerID() + ")";
 		return template.update(query);
 	} // end of method
-	
+
 	public int deleteService(int id) {
 		String query = "DELETE FROM service WHERE serviceID=" + id + "";
 		return template.update(query);
 
 	} // end of method
-	
-	public int deleteServiceByCarID(int carID){
+
+	public int deleteServiceByCarID(int carID) {
 		String query = "DELETE FROM service WHERE carID=" + carID;
 		return template.update(query);
 	} // end of method
-	
-	public int deleteServiceByCustomerID(int customerID){
+
+	public int deleteServiceByCustomerID(int customerID) {
 		String query = "DELETE FROM service WHERE customerID=" + customerID;
 		return template.update(query);
 	} // end of method
-	
+
 	public Service getServiceByID(int id) {
-		String query = "SELECT serviceID, registrationNumber, price, carID, customerID FROM service WHERE serviceID=" + id
-				+ "";
+		String query = "SELECT serviceID, registrationNumber, price, carID, customerID FROM service WHERE serviceID="
+				+ id + "";
 		return template.queryForObject(query, new BeanPropertyRowMapper<Service>(Service.class));
 
 	} // end of method
-	
+
 	public int updateService(Service service) {
-		String query = "UPDATE service SET registrationNumber='" + service.getRegistrationNumber()
-			+ "', price=" + service.getPrice() + ", carID=" + service.getCarID()
-			+ ", customerID=" + service.getCustomerID() + " WHERE serviceID=" + service.getServiceID();
+		String query = "UPDATE service SET registrationNumber='" + service.getRegistrationNumber() + "', price="
+				+ service.getPrice() + ", carID=" + service.getCarID() + ", customerID=" + service.getCustomerID()
+				+ " WHERE serviceID=" + service.getServiceID();
 		return template.update(query);
 
 	} // end of method
@@ -197,14 +197,45 @@ public class WorkshopDao {
 			}
 		});
 	} // end of method
-	
+
 	/*
 	 * ActionHistory Dao
 	 */
-	
-	public int saveAction(ActionHistory history){
-		String query = "INSERT INTO actionhistory(actionDate, operation, price, serviceID) VALUES(CURRENT_DATE(), '" 
+
+	public int saveAction(ActionHistory history) {
+		String query = "INSERT INTO actionhistory(actionDate, operation, price, serviceID) VALUES(CURRENT_DATE(), '"
 				+ history.getOperation() + "', " + history.getPrice() + ", " + history.getServiceID() + ")";
+		return template.update(query);
+	} // end of method
+
+	public List<ActionHistory> getAllActionHistoriesByServiceID(int id) {
+		String query = "SELECT actionHistoryID, operation, price, actionDate FROM actionhistory WHERE serviceID=" + id;
+		return template.query(query, new RowMapper<ActionHistory>() {
+			public ActionHistory mapRow(ResultSet rs, int row) throws SQLException {
+				ActionHistory actionHistory = new ActionHistory();
+				actionHistory.setActionHistoryID(rs.getInt(1));
+				actionHistory.setOperation(rs.getString(2));
+				actionHistory.setPrice(rs.getDouble(3));
+				actionHistory.setActionDate(rs.getDate(4));
+				return actionHistory;
+			}
+		});
+	} // end of method
+
+	public int deleteActionHistory(int id) {
+		String query = "DELETE FROM actionhistory WHERE actionHistoryID=" + id + "";
+		return template.update(query);
+	} // end of method
+
+	public ActionHistory getActionHistoryByID(int actionHistoryID) {
+		String query = "SELECT actionHistoryID, operation, price FROM actionhistory WHERE actionHistoryID="
+				+ actionHistoryID;
+		return template.queryForObject(query, new BeanPropertyRowMapper<ActionHistory>(ActionHistory.class));
+	} // end of method
+
+	public int updateActionHistory(ActionHistory actionHistory) {
+		String query = "UPDATE actionHistory SET operation='" + actionHistory.getOperation() + "', price="
+				+ actionHistory.getPrice() + " WHERE actionHistoryID=" + actionHistory.getActionHistoryID();
 		return template.update(query);
 	} // end of method
 

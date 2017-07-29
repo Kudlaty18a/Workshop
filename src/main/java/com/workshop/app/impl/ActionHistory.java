@@ -24,9 +24,8 @@ public class ActionHistory {
 		this.actionHistoryID = actionHistoryID;
 	}
 
-	public SimpleDateFormat getActionDate() {
-		sdf.format(actionDate);
-		return sdf;
+	public String getActionDate() {
+		return sdf.format(actionDate);
 	}
 
 	public void setActionDate(Date actionDate) {

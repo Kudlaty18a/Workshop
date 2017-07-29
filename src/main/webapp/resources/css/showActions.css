@@ -14,7 +14,7 @@ div{
 table {
 	margin-top: 50px;
     border-collapse: collapse;
-    width: 120.5%;
+    width: 140.5%;
     margin-left: 140px;
 }
 
@@ -46,6 +46,19 @@ th {
 }
 
 tr:hover{
+	background-color: #888888;
+    color: white;
+}
+
+#red_color{
+	color: #B80000;
+}
+
+#green_color{
+	color: #00FF66;
+}
+
+#static_row{
 	background-color: #888888;
     color: white;
 }
